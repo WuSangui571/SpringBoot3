@@ -1,0 +1,16 @@
+# 数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot
+    username: root
+    password: 333
+    type: com.zaxxer.hikari.HikariDataSource
+
+# mybatis相关配置
+mybatis:
+  type-aliases-package: com.sangui.springboot.bean
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+

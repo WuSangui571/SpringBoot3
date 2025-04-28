@@ -1,0 +1,46 @@
+myapp:
+  a:
+    username: jacksonyml
+    password: 123456yml
+    age: 20
+    gender: true
+
+app:
+  xyz:
+    name: zhangsan
+    address:
+      city: beijing
+      street: road
+
+app2:
+  abc:
+#    names: [jack,lucy,tom]
+    names:
+      - smith
+      - tom
+      - jack
+
+    addressArray:
+      - city: BJ
+        street: CY
+      - city: SX
+        street: JS
+
+    addressList:
+      - city: BJ111
+        street: CY111
+      - city: SX222
+        street: JS222
+
+    addressMap:
+      addr1:
+        city: 111
+        street: 1111
+
+      addr2:
+        city: 222
+        street: 2222
+other:
+  abc:
+    city: sss
+    street: fff

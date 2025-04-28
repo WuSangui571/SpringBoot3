@@ -1,0 +1,5 @@
+myapp:
+  username: lucy
+  email: lucy@222.com
+  age: 20
+  gender: false

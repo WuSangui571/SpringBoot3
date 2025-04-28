@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sangui.springboot.mapper.VipMapper">
+  <resultMap id="BaseResultMap" type="com.sangui.springboot.bean.Vip">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="card_number" jdbcType="CHAR" property="cardNumber" />
+    <result column="birth" jdbcType="CHAR" property="birth" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `name`, card_number, birth
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_vip
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_vip
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.sangui.springboot.bean.Vip" useGeneratedKeys="true">
+    insert into t_vip (`name`, card_number, birth
+      )
+    values (#{name,jdbcType=VARCHAR}, #{cardNumber,jdbcType=CHAR}, #{birth,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.sangui.springboot.bean.Vip" useGeneratedKeys="true">
+    insert into t_vip
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="cardNumber != null">
+        card_number,
+      </if>
+      <if test="birth != null">
+        birth,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNumber != null">
+        #{cardNumber,jdbcType=CHAR},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sangui.springboot.bean.Vip">
+    update t_vip
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNumber != null">
+        card_number = #{cardNumber,jdbcType=CHAR},
+      </if>
+      <if test="birth != null">
+        birth = #{birth,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sangui.springboot.bean.Vip">
+    update t_vip
+    set `name` = #{name,jdbcType=VARCHAR},
+      card_number = #{cardNumber,jdbcType=CHAR},
+      birth = #{birth,jdbcType=CHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

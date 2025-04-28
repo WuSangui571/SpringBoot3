@@ -1,0 +1,10 @@
+spring:
+  config:
+    import:
+      - classpath:/config/application-mysql.yml
+      - classpath:/config/application-redis.yml
+
+
+#spring:
+#  config:
+#    import: [classpath:/config/application-mysql.yml,classpath:/config/application-redis.yml]

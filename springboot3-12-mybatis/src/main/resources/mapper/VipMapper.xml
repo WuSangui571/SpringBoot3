@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sangui.springboot.mapper.VipMapper">
+    <insert id="insert" parameterType="Vip">
+        INSERT INTO t_vip(id,name,card_number,birth) VALUES(null,#{name},#{cardNumber},#{birth})
+    </insert>
+
+    <select id="selectAll" resultType="Vip">
+--         SELECT id,name,card_number as cardNumber,birth FROM t_vip
+        SELECT * FROM t_vip
+    </select>
+</mapper>
