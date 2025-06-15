@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @Author: sangui
  * @CreateTime: 2025-04-28
- * @Description:
+ * @Description: VipController
  * @Version: 1.0
  */
 @RestController
 public class VipController {
     @Autowired
-    VipMapper vipMapper;
+    private VipMapper vipMapper;
 
+    // localhost:8080/detail?cn=132312
     @GetMapping("/detail")
     public Vip detail(@RequestParam("cn") String cardNumber){
         return vipMapper.selectByCardNumber(cardNumber);

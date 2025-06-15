@@ -3,6 +3,9 @@ package com.sangui.ssm.mapper;
 import com.sangui.ssm.bean.Vip;
 import org.springframework.stereotype.Repository;
 
+/**
+ * @author sangui
+ */
 @Repository
 public interface VipMapper {
     int deleteByPrimaryKey(Long id);
